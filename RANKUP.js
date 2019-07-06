@@ -1,0 +1,68 @@
+{
+  "name": "rankup",
+  "permissions": "NONE",
+  "restriction": "1",
+  "_id": "cQGFu",
+  "actions": [
+    {
+      "storage": "1",
+      "varName": "howmuch",
+      "min": "3",
+      "max": "27",
+      "name": "Generate Random Number"
+    },
+    {
+      "server": "0",
+      "varName": "",
+      "info": "1",
+      "storage": "1",
+      "varName2": "ID",
+      "name": "Store Server Info"
+    },
+    {
+      "member": "1",
+      "varName": "",
+      "dataName": "${tempVars(\"ID\")}xp",
+      "defaultVal": "0",
+      "storage": "1",
+      "varName2": "b4",
+      "name": "Store Member Data"
+    },
+    {
+      "FirstNumber": "${tempVars(\"b4\")}",
+      "info": "0",
+      "SecondNumber": "${tempVars(\"howmuch\")}",
+      "storage": "1",
+      "varName": "now",
+      "name": "Basic Math Operation"
+    },
+    {
+      "storage": "1",
+      "varName": "now",
+      "comparison": "4",
+      "value": "999",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "2",
+      "iffalseVal": "8",
+      "name": "Check Variable"
+    },
+    {
+      "source": "TCJre",
+      "type": "true",
+      "name": "Call Command/Event"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "member": "1",
+      "varName": "",
+      "dataName": "${tempVars(\"ID\")}xp",
+      "changeType": "0",
+      "value": "tempVars(\"now\")",
+      "name": "Control Member Data"
+    }
+  ],
+  "comType": "3"
+}
